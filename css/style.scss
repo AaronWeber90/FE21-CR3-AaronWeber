@@ -1,0 +1,265 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin:0;
+    padding: 0 1em;
+    scroll-behavior: smooth; 
+}
+
+body, h1, h2, u, p {
+    margin: 0;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+nav {
+    justify-content: space-between;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.primary-list, .secondary-list, .footer-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-btn {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .5em 1em;
+    font-family: 'Roboto Slab', serif;
+    display: block;
+    border-radius: 50px;
+    box-shadow: 0px 3px 5px grey;
+    transition: 500ms;
+}
+
+.btn-primary {
+    background: #022a03;
+    color: white;
+}
+
+.btn-secondary {
+    background: #e2e3dea8;
+    color: #022a03;
+}
+
+.nav-btn:hover {
+    box-shadow: none;
+    opacity: 0.8;
+}
+
+.nav-item + .nav-item, .primary-list + .secondary-list  {
+    margin-top: .5em;
+}
+
+.hero {
+    min-height: 500px;
+    background: url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80) no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+
+    p {
+        font-family: 'Roboto Slab', serif;
+        letter-spacing: 10px;
+        font-weight: bold;
+        color: #272323;
+    }
+}
+
+h1 {
+    font-family:'Pacifico', cursive;
+    font-size: 4rem;
+    line-height: 1.5;
+    margin: 0;
+    color: #022a03;
+    text-shadow: 3px 3px 3px white;
+}
+
+h2 {
+    font-family: 'Pacifico', cursive;
+    color: #272323;
+}
+
+h3 {
+    margin: 0 0 .5em 0;
+    line-height: 1.1;
+    font-family: 'Roboto Slab', serif;
+    color: #272323;
+}
+
+.section__head {
+    text-align: center;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-heading {
+    font-size: 2rem;
+}
+
+.meal {
+    h3 {
+        font-family: 'Roboto Slab', serif;
+        color: #272323;
+    }
+}
+
+.meal + .meal {
+    margin-top: 1.5em;
+}
+
+.meal__top {
+    height: 200px;
+}
+
+.meal__bottom {
+    min-height: 200px;
+    padding: 1em;
+    background: #e2e3dea8;
+
+    display:flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+}
+
+.meal-text {
+    margin-right: .5em;
+}
+
+.meal-text__ingredients {
+    font-family: 'Roboto Slab', serif;
+    font-size: .9rem;
+    color: #272323d2;
+}
+
+.meal-price {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1rem;
+    color: #272323;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 1.5em;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    color: #272323;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+// TABLET CSS START
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .primary-list, .secondary-list, .footer-list {
+        flex-direction: row;
+    }
+
+    .nav-item + .nav-item, .primary-list + .secondary-list  {
+        margin-top: 0;
+        margin-left: .5em;
+    }
+
+    .main {
+        display: grid;
+        grid: repeat(3, 100px 1fr 1fr) / 1fr 1fr;
+        grid-gap: 1em;
+    }
+
+    .main-review {
+        display: grid;
+        grid: repeat(2, 1fr) / 1fr 1fr;
+        grid-gap: 1em;
+    }
+
+    .section__head {
+        text-align: center;
+        padding: 1.5em;
+        grid-area: span 1 / span 2;
+    }
+
+    .meal + .meal {
+        margin-top: 0;
+    }
+
+}
+
+// DESKTOP CSS START
+@media screen and (min-width: 901px) {
+    nav {
+        display: flex;
+    }
+    
+    .primary-list, .secondary-list, .footer-list {
+        flex-direction: row;
+    }
+
+    .nav-item + .nav-item, .primary-list + .secondary-list  {
+        margin-top: 0;
+        margin-left: .5em;
+    }
+
+    .main {
+        display: grid;
+        grid: repeat(4, 100px 1fr) / repeat(4, 1fr);
+        grid-gap: 1em;
+    }
+
+    .main-review {
+        display: grid;
+        grid: 100px 1fr 1fr / 1fr 1fr;
+        grid-gap: 1em;
+    }
+
+    .section__head {
+        text-align: center;
+        padding: 1.5em;
+        grid-area: span 1 / span 4;
+    }
+
+    .meal + .meal {
+        margin-top: 0;
+    }
+}
